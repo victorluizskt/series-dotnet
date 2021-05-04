@@ -124,7 +124,7 @@ namespace DIO.Series
                 var excluido = serie.returnDelete();
                 if(!excluido)
                 {
-                    Console.WriteLine("#ID {0}: - {1}", serie.returnId(), serie.returnTitle());
+                Console.WriteLine("#ID {0}: - {1}", serie.returnId(), serie.returnTitle());
                 }
             }
         }

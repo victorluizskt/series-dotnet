@@ -9,21 +9,42 @@ namespace DIO.Series
     private List<Serie> listSerie = new List<Serie>();
      public void update(int id, Serie entity)
      {
-        listSerie[id] = entity;
+       try 
+       {
+           if(id >= 0 && entity != null){
+            listSerie[id] = entity;
+        }
+       } catch(ArgumentException e)
+       {
+          Console.WriteLine(e);
+       }
      }   
 
      public void delete(int id)
      {
-        listSerie[id].deleteAt();
+        try {
+           listSerie[id].deleteAt();
+        } catch(ArgumentException e)
+        {
+           Console.WriteLine(e);
+        }
      }
 
      public void add(Serie entity)
      {
-        listSerie.Add(entity);
+        try {
+           if(entity != null)
+           {
+              listSerie.Add(entity);
+           } 
+        } catch(ArgumentException e)
+        {
+           Console.WriteLine(e);
+        }
      }
 
      public List<Serie> Lista()
-     {
+     {   
         return listSerie;
      }
 
@@ -34,8 +55,12 @@ namespace DIO.Series
 
     public Serie ReturnForId(int id)
     {
+       if(id >= 0)
+       {
         return listSerie[id];
-    }
+       }
 
+      throw new ArgumentException("Id não é válido.");
+    }
     }
 }
