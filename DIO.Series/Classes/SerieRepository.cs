@@ -14,27 +14,27 @@ namespace DIO.Series
 
      public void delete(int id)
      {
-        listSerie.RemoveAt(id);
+        listSerie[id].deleteAt();
      }
 
      public void add(Serie entity)
      {
-        throw new NotImplementedException();
+        listSerie.Add(entity);
      }
 
      public List<Serie> Lista()
      {
-        throw new NotImplementedException();
+        return listSerie;
      }
 
     public int nextId()
     {
-        throw new NotImplementedException();
+        return listSerie.Count;
     }
 
     public Serie ReturnForId(int id)
     {
-        throw new NotImplementedException();
+        return listSerie[id];
     }
 
     }

@@ -11,7 +11,8 @@ namespace DIO.Series
         private int Age {get; set;}
 
         private bool delete {get; set;}
-    
+
+        // Construtor
         public Serie (int id, Genre genre, string title, string description, int age)
         {
             this.Id = id;
@@ -22,6 +23,7 @@ namespace DIO.Series
             this.delete = false;
         }
 
+        // Metódos
         public string returnTitle()
         {
             return this.Title;
@@ -32,6 +34,17 @@ namespace DIO.Series
             return this.Id;
         }
 
+        public bool returnDelete()
+        {
+            return this.delete;
+        }
+
+        public void deleteAt()
+        {
+            this.delete = true;
+        }
+
+        // toString
         public override string ToString()
         {
             string retorno = "";
