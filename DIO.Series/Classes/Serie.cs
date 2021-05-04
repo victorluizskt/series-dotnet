@@ -9,6 +9,8 @@ namespace DIO.Series
         private string Title {get; set;}
         private string Description {get; set;}
         private int Age {get; set;}
+
+        private bool delete {get; set;}
     
         public Serie (int id, Genre genre, string title, string description, int age)
         {
@@ -17,6 +19,7 @@ namespace DIO.Series
             this.Title = title;
             this.Description = description;
             this.Age = age;
+            this.delete = false;
         }
 
         public string returnTitle()
